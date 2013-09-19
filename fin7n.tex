@@ -1,0 +1,175 @@
+\documentclass{article}
+\usepackage[margin=1cm]{geometry}
+\usepackage{nopageno}
+\usepackage{helvet}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{calc}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\newlength\tabheightb
+\setlength{\tabheightb}{0.75cm-\baselineskip}
+
+
+\begin{document}
+
+
+\newcommand\address{\parbox[t]{\linewidth}{\scshape 56 Big Road \\ Utopia}}
+% Table one variables
+\newlength\tableonewidth
+\setlength\tableonewidth{\linewidth-8\tabcolsep-2pt}
+
+\newlength\accnowidth
+\setlength\accnowidth{\tableonewidth*\real{0.016}} %0.16 is manually tweaked
+\newcommand{\accountno}[8]{%
+  \begin{tabular}{>{\centering}p{\accnowidth-\tabcolsep}|>{\centering}p{\accnowidth}|>{\centering}p{\accnowidth}|>{\centering}p{\accnowidth}|>{\centering}p{\accnowidth}|>{\centering}p{\accnowidth}|>{\centering}p{\accnowidth}|>{\centering}p{\accnowidth-\tabcolsep}}
+    #1 & #2& #3& #4& #5& #6& #7&#8
+  \end{tabular}%
+}
+
+% This code is not perfectly aligned, but it's close enough
+\newcommand{\sortcode}[3]{%
+  \begin{tabular}{ >{\centering}L{0.1\tableonewidth-3\tabcolsep} | >{\centering}L{0.1\tableonewidth} | >{\centering}L{0.1\tableonewidth-3\tabcolsep}  }
+      #1 & #2 & #3
+    \end{tabular}}
+% \setlength{\tabcolsep}{0pt}
+\title{REQUEST FOR PAYMENT OF NON STAFF EXPENSES} %Not used
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}m{#1}}
+
+\newcommand\eotline{& \\\cline{1-4}}
+\newcommand\eotlineb{& \\\cline{1-6}}
+\newcommand\eotlineba{& \\\cline{2-6}}
+
+\begin{center}
+  % TODO put image of UOB logo here
+ \includegraphics[width=3cm]{uoblogo}\hfill \uppercase{\textbf{Request for Payment of Non-staff Expenses}}\hfill FIN 7N
+\end{center}
+% Remember, a line in a table is 0.4pt
+\setlength{\lineskip}{0pt}      % to make sure my tables stay real cosy next to each other
+
+\begin{center}
+
+  \renewcommand{\arraystretch}{1.4}
+
+\noindent\begin{tabular}{| L{0.17\tableonewidth} | L{0.2\tableonewidth} |}\hline
+  Budget Centre\newline Purchase Order No & \\\hline
+\end{tabular} \hfill
+\begin{tabular}{| L{0.6\tableonewidth} |}\hline
+  Finance Office\newline Ref \\\hline
+\end{tabular}
+\begin{center}
+  \noindent\uppercase{\bfseries Refer to notes overleaf and complete
+    in block capitals giving details of expenses being claimed payment
+    will be made to the bank account given below in all cases}
+\end{center}
+\footnotesize
+  \noindent\begin{tabular}{|L{0.15\tableonewidth}|
+      L{0.35\tableonewidth}| L{0.2\tableonewidth}|
+      L{0.3\tableonewidth}|l}
+    \cline{1-4}
+    Surname & \textsc{Geldoff} & Person ID No\newline \textbf{Finance Office Use Only} & \eotline
+    Forename & \textsc{Bob} & Email Address & \textsc{someone@nowhere.com}\eotline
+    Department & \textsc{Chocolate Taster} & Bank Name & \textsc{Free Money Please}\eotline
+    Student ID No & 0891399 & Sort Code &\sortcode{00}{00}{00}
+\eotline
+    Gender & \textsc{Male} & Account No. & \accountno{0}{0}{0}{0}{0}{0}{0}{0}
+    \eotline
+    \multicolumn{2}{|L{0.5\tableonewidth+2\tabcolsep+0.8pt}|}{\multirow{2}{*}{Home Address: \address{} }} & IBAN\newline & \tabularnewline\cline{3-4}
+    \multicolumn{2}{|c|}{} & SWIFT/BIC\newline & \eotline
+  \end{tabular}
+  \newlength\tabletwowidth
+  \setlength\tabletwowidth{\linewidth-12\tabcolsep-2.8pt}
+  \setlength{\lineskip}{0pt} % to make sure my tables stay real
+  \noindent\begin{tabular}{|L{0.39\tabletwowidth}|
+      L{0.14\tabletwowidth}| L{0.11\tabletwowidth}|
+      L{0.20\tabletwowidth}| L{0.11\tabletwowidth}|
+      L{0.05\tabletwowidth}|l}
+    \textbf{Purpose for which expenditure was incurred:}  & \multicolumn{3}{L{0.45\tabletwowidth+4\tabcolsep+0.8pt}|}{\centering\textbf{Account Codes}} & \textbf{\pounds\ Amount} & \textbf{p} \eotlineb
+    \multirow{6}{*}{}& & & & & \eotlineba
+    & & & & & \eotlineba
+    & & & & & \eotlineba
+    & & & & & \eotlineba
+    & & & & & \eotlineba
+    & \multicolumn{3}{L{0.45\tabletwowidth+4\tabcolsep+0.8pt}|}{\raggedleft Total}& & \eotlineb
+  \end{tabular}
+  \newlength\tablecwidth
+  \setlength\tablecwidth{\linewidth-8\tabcolsep-1.6pt}
+  \renewcommand{\arraystretch}{1.8}
+  \begin{tabular}{| L{0.16\tablecwidth} | L{0.59\tablecwidth} |
+      L{0.15\tablecwidth} | L{0.1\tablecwidth} |l}
+    \cline{1-4}
+    \multicolumn{2}{|c|}{} &  \textbf{\pounds\ Amount} & \textbf{p} & \\
+    \cline{1-4}
+    Date & Travel (other than by car) & & & \\
+    & From \hfill To\hfill. & & & \\\cline{1-4}
+    Date & Travel (by car) & & & \\
+    & From \hfill To \hfill Miles \hfill Rate \hfill . & &  \\\cline{1-4}
+    Date & Accomodation & & & \\
+    & & & & \\\cline{1-4}
+    Date & Subsistence & & & \\
+    & & & & \\\cline{1-4}
+    Date & Other & & & \\
+    & & & & \\\cline{1-4}
+    \multicolumn{2}{|r|}{Total Claimed}   & & & \\\cline{1-4}
+  \end{tabular}
+  \newlength\tabledwidth
+  \setlength\tabledwidth{\linewidth-4\tabcolsep-0.8pt}
+  \begin{tabular}{| L{0.5\tabledwidth} | L{0.5\tabledwidth}| l}
+    \uppercase{\textbf{Declaration of Claimant}}\newline
+    I declare that the expenses claimed were duly incurred on University business, have not been previously claimed and will not be claimed from any other agency, and are in accordance with the University's Rules and Procedures.\newline
+    & \uppercase{\textbf{Certification by Authorised Officer}}\newline
+    I certify that the expenses claimed are due to be paid, were necessarily incurred and that the calculations have been checked for accuracy and compliance with the University's Rules and Procedures\newline & \\
+    Signed \dotfill\newline\newline Date\dotfill & Signed \dotfill\newline\newline Date\dotfill\\\cline{1-2}
+  \end{tabular}
+\end{center}
+
+\newpage
+
+\textbf{NOTES}\\
+\begin{enumerate}
+\item Please complete all of the section showing personal details
+  and bank details (IBAN, SWIFT/BIC is required for foreign banks
+  only). Should any information be omitted, the Payroll Office may
+  have to return the form to the department and your payment may be
+  delayed.
+
+\item Copies of the University's Manual of Financial Rules
+  (MFR) are available in all Budget Centres and a re-accessible
+  through the intranet \url{https://intranet.birmingham.ac.uk/finance/manual/index.aspx}. All
+  staff claiming expenses must ensure that they are familiar with the
+  appropriate section and that claims are made in accordance with the
+  MFR.
+\item It is essential that the correct forms are used when
+  claiming expenses as different information is required depending
+  upon who is making the claim. Completed and authorised forms should
+  be sent to the Payroll Section of the Finance Office. If both fees
+  and expenses are being claimed then either form FIN 14 (Non-staff
+  claim form) or form FIN 16 (student claim form) should be used.
+\item Where students of this University are claiming expenses their
+  Student I.D.\ Number must be included in all cases or payment cannot
+  be made.
+\item Please use a separate claim form for each activity where
+  expenses have been incurred.
+\item All expenses paid to individuals who are not members of staff at this University will be paid into
+  the claimants personal bank account, the details of which must be
+  provided on the front of this form.
+\item The approval of your Head of Budget Centre must be obtained
+  before expenses are incurred and Staff are required to exercise
+  economy, taking advantage of special travel facilities whenever
+  possible.
+\item Special rates of reimbursement apply to particular activities
+  and such rates are notified in the Expenses section of the Finance
+  Office Website
+  \url{https://intranet.birmingham.ac.uk/finance/payroll/Expenses.aspx}.
+\item Where Budget Centres wish to operate commitment accounting for
+  expenses, the Budget Centre Purchase Order Number box on the front
+  of this form must be completed.
+\item The University has a dispensation from the Inland Revenue
+  to reimburse the majority of expenses claimed without the deduction
+  of income tax at source or the need to include the details within
+  year end returns provided that receipts are obtained in all cases.
+\end{enumerate}
+\end{document}
